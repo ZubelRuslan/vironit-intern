@@ -18,11 +18,15 @@ function get(str, oldSubStr, newSubStr) {
 
 // function that returns values of a given object and nested objects in it 
 function getValuesOfObject(obj) {
-  for (let value in obj) {
-    if (typeof obj[value] === 'object') {
-      getValuesOfObject(obj[value]);
-    } else {
-      console.log(obj[value]);
+  if (obj !== null && typeof obj === 'object') {
+    for (let value in obj) {
+      if (typeof obj[value] === 'object') {
+        getValuesOfObject(obj[value]);
+      } else {
+        console.log(obj[value]);
+      }
     }
+  } else {
+    return 'it is not an object';
   }
 }
