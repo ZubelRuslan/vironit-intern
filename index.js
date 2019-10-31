@@ -20,7 +20,7 @@ function get(str, oldSubStr, newSubStr) {
 function getValuesOfObject(obj) {
   if (obj !== null && typeof obj === 'object') {
     for (let value in obj) {
-      if (typeof obj[value] === 'object') {
+      if (typeof obj[value] === 'object' && obj[value] !== null) {
         getValuesOfObject(obj[value]);
       } else {
         console.log(obj[value]);
