@@ -33,6 +33,7 @@ app.post('/:filename', (req, res) => {
       if (err) {
         fs.writeFile(
           req.params.filename + '.txt',
+          // add some certain key below after body to write it's value in file
           req.body,
           err => {
             if (err) throw new Error(err);
@@ -41,7 +42,6 @@ app.post('/:filename', (req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
         res.send(`<h1>File ${req.params.filename.toUpperCase()} created</h1>`);
-        //! доделать отображение в файле
       } else {
         res.statusCode = 400;
         res.setHeader('Content-Type', 'text/html');
@@ -54,6 +54,7 @@ app.post('/:filename', (req, res) => {
 app.put('/:filename', (req, res) => {
   fs.appendFile(
     path.join(__dirname, req.params.filename + '.txt'),
+    // add some certain key below after body to write it's value in file
     req.body,
     err => {
       res.statusCode = 400;
@@ -61,7 +62,6 @@ app.put('/:filename', (req, res) => {
       res.send(`<h1>File with name ${req.params.filename.toUpperCase()} already exist</h1>`);
     }
   );
-  //! доделать отображение в файле
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
   res.send(`<h1>File ${req.params.filename.toUpperCase()} updated</h1>`);
