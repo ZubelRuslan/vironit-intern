@@ -26,7 +26,6 @@ app.get('/:filename', (req, res) => {
 });
 
 app.post('/:filename', (req, res) => {
-  console.log();
   fs.readFile(
     path.join(__dirname, req.params.filename + '.txt'),
     err => {
