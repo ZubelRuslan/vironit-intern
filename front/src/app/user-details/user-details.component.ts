@@ -28,8 +28,7 @@ export class UserDetailsComponent implements OnInit {
     this.detailsUser = this.userService.getUsers().find(user => user._id === id);
   }
 
-  goBack() {
+  goBack(): void {
     this.location.back();
   }
-
 }
