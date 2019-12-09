@@ -19,11 +19,5 @@ h2 {
 }
 
 .user-link:hover > span {
-  color: #CC9900;
+  color: #ffffff;
 }
-
-.selected-user {
-  color: #333333;
-  background-color: darkcyan;
-}
-
