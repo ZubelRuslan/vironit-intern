@@ -11,7 +11,7 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-  @Input() detailsUser: IUser;
+  @Input() detailsUser: IUser; // Please remove if not needed
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +25,7 @@ export class UserDetailsComponent implements OnInit {
 
   getUser(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.detailsUser = this.userService.getUsers().find(user => user._id === id);
+    this.detailsUser = this.userService.getUsers().find(user => user._id === id); // Please move find logic to service and call getUser(id: string) method from component
   }
 
   goBack(): void {
