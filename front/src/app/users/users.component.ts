@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
     this.users = this.userService.getUsers();
   }
 
-  selectUser(user): void {
+  selectUser(user): void { // please remove if not needed
     this.selectedUser = user;
   }
 }
